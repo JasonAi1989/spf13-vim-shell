@@ -22,6 +22,7 @@ app_name='spf13-vim-fork'
 debug_mode='0'
 fork_maintainer='0'
 [ -z "$VUNDLE_URI" ] && VUNDLE_URI="https://github.com/gmarik/vundle.git"
+[ -z "$SYNTAX_URI" ] && SYNTAX_URI="https://github.com/JasonAi1989/vim_syntax.git"
 
 ############################  BASIC SETUP TOOLS
 msg() {
@@ -203,6 +204,11 @@ sync_repo       "$HOME/.vim/bundle/vundle" \
                 "vundle"
 
 setup_vundle    "$APP_PATH/.vimrc.bundles.default"
+
+sync_repo       "$HOME/.vim/syntax/" \
+                "$SYNTAX_URI" \
+                "master" \
+                "syntax"
 
 msg             "\nThanks for installing $app_name."
 msg             "© `date +%Y` http://vim.spf13.com/"
